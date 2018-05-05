@@ -12,6 +12,7 @@
 <div id="container" style="width: 100%; height: 600px; margin: 0 auto"></div>
 
 <center>
+<button id="Toutes les regions">Toutes les régions</button>
 <button id="Mer du Nord">Mer du Nord</button>
 <button id="Manche Est">Manche Est</button>
 <button id="Nord de la Seine">Nord de la Seine</button>
@@ -34,10 +35,9 @@ $(document).ready(function() {
 		series: []
 		};
 		
-// Initialisation du premier graphique avec les données de la Bretagne Nord.
-	$.get('tables/conteneurs/zones/Bretagne Nord.csv', function(data) {
-		var choix_depart = 'Bretagne Nord'
-		options.title.text = 'Région : ' + choix_depart +'.' ;
+// Initialisation du premier graphique avec les données la table "toutes zones".
+	$.get('tables/conteneurs/zones/Toutes les regions.csv', function(data) {
+		options.title.text = 'Région : Toutes les régions.' ;
 		var lines = data.split('\n');
 		$.each(lines, function(lineNo, line){
 			var items = line.split(',');
